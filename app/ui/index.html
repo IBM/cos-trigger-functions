@@ -1,0 +1,49 @@
+<html>
+  <head>
+      <script src="javascript/util.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+      <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h3>Cloud Object Storage Uploader</h1>
+        <p>This application will upload to cloud object storage. After you've uploaded your image, some functions will be triggered to do some additional image processing and analysis. Click "See Results" to see the results of those functions.</p>
+      </div>
+      <!-- <h4> Before uploading a file:</h4>
+      <ul>
+          <li>Create Cloud Object Storage HMAC Credentials ({HMAC:true} on credential creation)</li>
+          <li>Create a bucket in the Cloud Object Storage Service</li>
+          <li>Add the bucket name as a parameter to this action</li>
+      </ul> -->
+      <h4> Upload your Image:</h4>
+      <form id="myform" enctype="multipart/form-data">
+          <input id="theFile" type="file" name="body" required>
+      </form>
+      <button class="btn btn-primary" onclick="uploadImageAndGetProcessedImages()"> Upload </button>
+      <br/><br/>
+      <h4> Original Image:</h4>
+      <div class="row">
+        <div class="col-md-4">
+          <img src="https://via.placeholder.com/200x200" class="my-image" id="original-image" style="max-width: 200px; height: auto;"></img>
+        </div>
+      </div>
+      <br/><br/>
+      <h4> Image Processing and Analysis:</h4>
+      <div class = "row">
+        <div class="col-md-4">
+          <h5>Charcoaled Image:</h5>
+          <img src="https://via.placeholder.com/200x200" class="my-image" id="grey-image" style="max-width: 200px; height: auto;"></img>
+        </div>
+        <div class="col-md-4">
+          <h5>Your visual recognition results:</h5>
+          <p id="vr-text"></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

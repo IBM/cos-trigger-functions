@@ -1,0 +1,7 @@
+serverless/Packages
+.DS_Store
+app/.eslintrc.js
+app/.eslintrc.json
+app/.vscode/
+app/node_modules/
+app/credentials.json
