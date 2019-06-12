@@ -104,7 +104,8 @@ To deploy the functions required in this application, we'll use the `ibm fn depl
 ### Bind Service Credentials to the Created Cloud Object Storage Package
 1. The deploy command created a package for you called `cloud-object-storage`. This package contains some useful cloud functions for interacting with cloud object storage. Let's bind the service credentials to this package.
     ```
-    ibmcloud fn service bind cloud-object-storage cloud-object-storage
+    ibmcloud fn service bind cloud-object-storage cloud-object-storage --instance YOUR_COS_INSTANCE_NAME
+
     ```
 
 1. Congratulations! If you went directly to your cloud object storage bucket and added a file, you should see your trigger fire and some processed actions showing up in your `mybucket-processed` bucket. Let's deploy a simple application for uploading the images and showing these results.
