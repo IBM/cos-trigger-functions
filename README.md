@@ -58,9 +58,9 @@ IBM Cloud Functions has recently created an experimental package that introduces
     ibmcloud target --cf
     ```
 
-1. Bind your Cloud Object Storage credentials to your package binding:
+1. Bind your Cloud Object Storage credentials to your package binding. Make sure to include the name you chose for your Cloud Object Storage instance.
     ```
-    ibmcloud fn service bind cloud-object-storage myCosPkg
+    ibmcloud fn service bind cloud-object-storage myCosPkg --instance YOUR_COS_INSTANCE_NAME
     ```
 
 ### Create Required Environment Variables and Deploy Cloud Functions
