@@ -85,10 +85,13 @@ To deploy the functions required in this application, we'll use the `ibm fn depl
     export BUCKET_NAME=<your_bucket_name>
     ```
 
-1. You will need to save the endpoint name, which is the COS Endpoint for your buckets. Since you selected us-geo when selecting your buckets, the endpoint should be `s3.us.cloud-object-storage.appdomain.cloud`
+1. You will need to save the endpoint name, which is the COS Endpoint for your buckets. Since you selected us-geo when selecting your buckets, the endpoint should be `s3.us.cloud-object-storage.appdomain.cloud`. 
+
     ```
     export ENDPOINT=s3.us.cloud-object-storage.appdomain.cloud
     ```
+
+*Note: If you selected a different region, you can find your endpoint by clicking your Cloud Object Storage service in the [Resource list](https://cloud.ibm.com/resources?groups=storage), finding your bucket in the list, and then looking under Configuration for that bucket. Use the public endpoint.*
 
 1. Finally, you will need some information from the Visual Recognition service.  You saved your apikey earlier, so use that. This application is built against the version released on `2018-03-19`, so we'll use that value for VERSION.
     ```
@@ -103,7 +106,13 @@ To deploy the functions required in this application, we'll use the `ibm fn depl
     ```
 
 ### Bind Service Credentials to the Created Cloud Object Storage Package
-1. The deploy command created a package for you called `cloud-object-storage`. This package contains some useful cloud functions for interacting with cloud object storage. Let's bind the service credentials to this package.
+1. The deploy command created a package for you called `cloud-object-storage`. This package contains some useful cloud functions for interacting with cloud object storage. If you selected a different region for your bucket than Cross-Regional us-geo, let's update the `cloud-object-storage` package with this information.
+    
+    ```
+    ibmcloud fn package update cloud-object-storage --param endpoint <COS_PUBLIC_ENDPOINT>
+    ```
+
+1. Let's bind the service credentials to this package.
     ```
     ibmcloud fn service bind cloud-object-storage cloud-object-storage --instance YOUR_COS_INSTANCE_NAME
 
