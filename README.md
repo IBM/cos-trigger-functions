@@ -67,7 +67,7 @@ IBM Cloud Functions has recently created an experimental package that introduces
 To deploy the functions required in this application, we'll use the `ibm fn deploy` command. This command will look for a `manifest.yaml` file defining a collection of packages, actions, triggers, and rules to be deployed. 
 1. Let's clone the application.
     ```
-    git clone git@github.com:beemarie/cos-functions-pattern.git
+    git clone git@github.com:IBM/cos-trigger-functions.git
     ```
 
 1. Take a look at the `serverless/manifest.yaml file`. You should see manifest describing the various actions, triggers, packages, and sequences to be created. You will also notice that there are a number of environment variables you should set locally before running this manifest file.
