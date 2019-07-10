@@ -18,7 +18,7 @@ To run this application, you'll need to set up IBM Object Storage and the IBM Vi
     * Give your service a name, and click `Create`.
     * In the left side menu, select `Buckets`, and then `Create bucket`.
     * Give your bucket a unique name. 
-    * For Resiliency, select `Cross Region`, and for Location, select `us-geo`.
+    * For Resiliency, select `Cross Region`, and for Location, select `us-geo`. *Note: you can select anything here, we'll just use cross region us-geo as our example throughout*
     * Click `Create Bucket`.
     * Create another bucket, with the same name suffixed by `-processed`. If your original bucket was `my-bucket`, then your new bucket will be `my-bucket-processed`.
     * Again, ensure that you select `Cross Region` and `us-geo`.
@@ -106,8 +106,7 @@ To deploy the functions required in this application, we'll use the `ibm fn depl
     ```
 
 ### Bind Service Credentials to the Created Cloud Object Storage Package
-1. The deploy command created a package for you called `cloud-object-storage`. This package contains some useful cloud functions for interacting with cloud object storage. If you selected a different region for your bucket than Cross-Regional us-geo, let's update the `cloud-object-storage` package with this information.
-    
+1. The deploy command created a package for you called `cloud-object-storage`. This package contains some useful cloud functions for interacting with cloud object storage. If you selected a different region for your bucket than Cross Region us-geo, let's update the `cloud-object-storage` package with this information.
     ```
     ibmcloud fn package update cloud-object-storage --param endpoint <COS_PUBLIC_ENDPOINT>
     ```
@@ -115,7 +114,6 @@ To deploy the functions required in this application, we'll use the `ibm fn depl
 1. Let's bind the service credentials to this package.
     ```
     ibmcloud fn service bind cloud-object-storage cloud-object-storage --instance YOUR_COS_INSTANCE_NAME
-
     ```
 
 1. Congratulations! If you went directly to your cloud object storage bucket and added a file, you should see your trigger fire and some processed actions showing up in your `mybucket-processed` bucket. Let's deploy a simple application for uploading the images and showing these results.
