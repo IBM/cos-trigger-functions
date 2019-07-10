@@ -21,7 +21,7 @@ To run this application, you'll need to set up IBM Object Storage and the IBM Vi
     * For Resiliency, select `Cross Region`, and for Location, select `us-geo`. *Note: you can select anything here, we'll just use cross region us-geo as our example throughout*
     * Click `Create Bucket`.
     * Create another bucket, with the same name suffixed by `-processed`. If your original bucket was `my-bucket`, then your new bucket will be `my-bucket-processed`.
-    * Again, ensure that you select `Cross Region` and `us-geo`.
+    * Again, ensure that you selected the same region as your first bucket, in this case `Cross Region` and `us-geo`.
     * In the left side menu, click `Service Credentials`. Click `New Credential`.
     * Check the checkbox for `Include HMAC Credential`. Click `Add`.
 
