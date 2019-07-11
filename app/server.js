@@ -13,8 +13,6 @@ app.use(fileUpload());
 app.use(bodyParser.json());
 
 app.post('/write', (req, res) => {
-  console.log('Creating object');
-  console.log(req.files.body);
   let url = '';
   cosInstance.putObject({
     Bucket: bucketName,
