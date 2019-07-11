@@ -13,29 +13,33 @@
       <div class="jumbotron">
         <h3>Cloud Object Storage Uploader</h1>
         <p>This application will upload to cloud object storage. After you've uploaded your image, some functions will be triggered to do some additional image processing and analysis. After some time, you will see the results of that image processing and analysis.</p>
+        <br/>
+        <h4> Upload your Image:</h4>
+        <form id="myform" enctype="multipart/form-data">
+            <input id="theFile" type="file" name="body" required>
+        </form>
+        <button class="btn btn-primary" onclick="uploadImageAndGetProcessedImages()"> Upload </button>
       </div>
-      <h4> Upload your Image:</h4>
-      <form id="myform" enctype="multipart/form-data">
-          <input id="theFile" type="file" name="body" required>
-      </form>
-      <button class="btn btn-primary" onclick="uploadImageAndGetProcessedImages()"> Upload </button>
-      <br/><br/>
-      <h4> Original Image:</h4>
+      <div class="row">
+        <div class="col-sm-4 titlerow">
+          Original Image
+        </div>
+        <div class="col-sm-4 titlerow">
+          Processed Image
+        </div>
+        <div class="col-sm-4 titlerow">
+          Visual Recognition Results
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-4">
           <img src="https://via.placeholder.com/200x200" class="my-image" id="original-image" style="max-width: 200px; height: auto;"></img>
         </div>
-      </div>
-      <br/><br/>
-      <h4> Image Processing and Analysis:</h4>
-      <div class = "row">
         <div class="col-md-4">
-          <h5>Charcoaled Image:</h5>
-          <img src="https://via.placeholder.com/200x200" class="my-image" id="grey-image" style="max-width: 200px; height: auto;"></img>
-        </div>
+            <img src="https://via.placeholder.com/200x200" class="my-image" id="grey-image" style="max-width: 200px; height: auto;"></img>
+          </div>
         <div class="col-md-4">
-          <h5>Your visual recognition results:</h5>
-          <p id="vr-text"></p>
+            <p id="vr-text"></p>
         </div>
       </div>
     </div>

@@ -5,4 +5,8 @@ body {
     padding: 40px 15px;
     text-align: center;
   }
-  
+
+.titlerow {
+  font-size: 20px;
+  font-family: Helvetica;
+}
