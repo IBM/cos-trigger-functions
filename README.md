@@ -1,6 +1,7 @@
 # Leverage Cloud Object Storage for Image Processing in a Serverless Environment
 ## Summary
-This pattern will set up a sample application to teach you about using IBM Cloud Object Storage from IBM Cloud Functions. There is also a web application component of this application, which will teach you about using the IBM Cloud Object Storage SDK for Node.js. In this application you will upload an image. That image will be stored in Cloud Object Storage, which will trigger your Serverless Cloud Functions to run. Those Cloud Functions will do some image processing and analysis - charcoaling the image and running visual recognition on the image. After the analysis and processing is done, the results will be stored in a different Cloud Object Storage Bucket, which can then be read from.
+In this application, you upload an image to a web application that is stored in IBM Cloud Object Storage, which triggers your serverless functions to run. Those functions perform some image processing and analysis, such as charcoaling the image and running visual recognition on it. After the analysis and processing is done, the results are stored in a different Cloud Object Storage bucket, which can then be read.
+
 
 ## Architecture
    ![](images/architecture.png)
