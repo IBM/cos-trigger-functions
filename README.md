@@ -73,7 +73,7 @@ To deploy the functions required in this application, we'll use the `ibm fn depl
 
 1. Take a look at the `serverless/manifest.yaml file`. You should see manifest describing the various actions, triggers, packages, and sequences to be created. You will also notice that there are a number of environment variables you should set locally before running this manifest file.
 
-1. Choose a package name, trigger name, and rule name and then save the environment variables.  *Note: Do not use `myCosPkg` for the package name since this is already in use by the package binding you just created.*
+1. Choose a package name, trigger name, and rule name and then save the environment variables.  *Note: The package you will create will hold all of the actions for this application. Do not use `myCosPkg` for the package name since this is already in use by the package binding you just created.*
     ```
     export PACKAGE_NAME=<your_chosen_package_name>
     export RULE_NAME=<your_chosen_rule_name>
