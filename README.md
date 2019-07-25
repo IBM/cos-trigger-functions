@@ -108,7 +108,7 @@ To deploy the functions required in this application, we'll use the `ibm fn depl
 ### Bind Service Credentials to the Created Cloud Object Storage Package
 1. The deploy command created a package for you called `cloud-object-storage`. This package contains some useful cloud functions for interacting with cloud object storage. If you selected a different region for your bucket than Cross Region us-geo, let's update the `cloud-object-storage` package with this information.
     ```
-    ibmcloud fn package update cloud-object-storage --param endpoint <COS_PUBLIC_ENDPOINT>
+    ibmcloud fn package update cloud-object-storage --param endpoint $ENDPOINT
     ```
 
 1. Let's bind the service credentials to this package.
