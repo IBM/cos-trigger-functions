@@ -1,5 +1,5 @@
 ---
 applications:
-- name: cos-image-writer
+- name: <YOUR_APPLICATION_NAME>
   memory: 256M
   instances: 1

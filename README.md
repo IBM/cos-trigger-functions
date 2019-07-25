@@ -133,7 +133,7 @@ Finally, let's deploy the web application that enables our users to upload image
     ```
     ---
     applications:
-    - name: cos-image-writer
+    - name: <YOUR_APPLICATION_NAME>
       memory: 256M
       instances: 1
     ```
