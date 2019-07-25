@@ -125,7 +125,7 @@ Finally, let's deploy the web application that enables our users to upload image
     cd ../app
     ```
   
-1. Update the `config.json` file with the required configuration values: your bucket name, your processed bucket name, and your endpoint url. You should've already found these values earlier.
+1. Update the `config.js` file with the required configuration values: your bucket name, your processed bucket name, and your endpoint url. You should've already found these values earlier.
 
 1. Create a file named `credentials.json` based on the `credentials_template.json` file. You can easily get the credentials by going to the cloud object storage service page, and clicking `Service Credentials`. You can copy this entire block and paste it as a child to `"OBJECTSTORAGE_CREDENTIALS":`.
 
