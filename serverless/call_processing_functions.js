@@ -27,5 +27,5 @@ async function main(params) {
       params: { bucket: params.bucket, url: params.body, key: params.key }
     })]);
 
-  return { message: 'Hello World' };
+  return { message: 'Processing Functions Called' };
 }
