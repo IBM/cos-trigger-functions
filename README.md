@@ -112,7 +112,7 @@ To deploy the functions required in this application, we'll use the `ibm fn depl
     ```
 
 ### Bind Service Credentials to the Created Cloud Object Storage Package
-1. The deploy command created a package for you called `cloud-object-storage`. This package contains some useful cloud functions for interacting with cloud object storage. Lets update the package with your endpoint information.
+1. The deploy command created a package for you called `cloud-object-storage`. This package contains some useful cloud functions for interacting with cloud object storage. Let's update the package with your endpoint information.
     ```
     ibmcloud fn package update cloud-object-storage --param endpoint $ENDPOINT
     ```
