@@ -8,8 +8,5 @@
   *
   */
  function main(params) {
-   if (params.notification.event_type === 'Object:Write') {
-     return { bucket: params.bucket, key: params.key, operation: 'getObject' };
-    }
-    return { error: 'ignoring docs that are not deleted or modified' };
+   return { bucket: params.bucket, key: params.key, operation: 'getObject' };
 }
