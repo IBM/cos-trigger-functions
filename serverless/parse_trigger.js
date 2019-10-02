@@ -8,8 +8,8 @@
   *
   */
  function main(params) {
-   if (params.status === 'added' || params.status === 'modified') {
-     return { bucket: params.bucket, key: params.file.Key, operation: 'getObject' };
+   if (params.notification.event_type === 'Object:Write') {
+     return { bucket: params.bucket, key: params.key, operation: 'getObject' };
     }
     return { error: 'ignoring docs that are not deleted or modified' };
 }
