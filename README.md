@@ -64,6 +64,12 @@ IBM Cloud Functions has recently created an experimental package that introduces
     ibmcloud fn service bind cloud-object-storage myCosPkg --instance YOUR_COS_INSTANCE_NAME
     ```
 
+### Create Required IAM Policy for Cloud Functions to Access Cloud Object Storage
+1. Before you can create a trigger to listen for bucket change events, you must assign the Notifications Manager role to your Cloud Functions namespace. As a Notifications Manager, Cloud Functions can view, modify, and delete notifications for a Cloud Object Storage bucket. 
+    ```
+    ibmcloud iam authorization-policy-create functions cloud-object-storage "Notifications Manager" --source-service-instance-name <functions_namespace_name> --target-service-instance-name <cos_service_instance_name>
+    ```
+
 ### Create Required Environment Variables and Deploy Cloud Functions
 To deploy the functions required in this application, we'll use the `ibm fn deploy` command. This command will look for a `manifest.yaml` file defining a collection of packages, actions, triggers, and rules to be deployed. 
 1. Let's clone the application.
