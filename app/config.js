@@ -1,7 +1,7 @@
 const config = {
-  COSBucketName: 'original-images-us-geo',
-  EndPointURL: 's3.us.cloud-object-storage.appdomain.cloud',
-  COSProcessedBucketName: 'original-images-us-geo-processed',
+  COSBucketName: 'BUCKET_NAME',
+  EndPointURL: 's3.us-south.cloud-object-storage.appdomain.cloud',
+  COSProcessedBucketName: 'BUCKET_NAME-processed',
 };
 
 module.exports = config;
