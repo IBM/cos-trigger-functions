@@ -18,10 +18,10 @@ To run this application, you'll need to set up IBM Object Storage and the IBM Vi
     * Give your service a name, and click `Create`.
     * In the left side menu, select `Buckets`, and then `Create bucket`.
     * Give your bucket a unique name. 
-    * For Resiliency, select `Cross Region`, and for Location, select `us-geo`. *Note: you can select anything here, we'll just use cross region us-geo as our example throughout*
+    * For Resiliency, select `Regional`, and for Location, select `us-south`. *Note: This trigger is currently available in us-south, us-east, and eu-gb regions. You could select one of the other regions, but our examples will use us-south*
     * Click `Create Bucket`.
     * Create another bucket, with the same name suffixed by `-processed`. If your original bucket was `my-bucket`, then your new bucket will be `my-bucket-processed`.
-    * Again, ensure that you selected the same region as your first bucket, in this case `Cross Region` and `us-geo`.
+    * Again, ensure that you selected the same region as your first bucket, in this case `Regional` and `us-south`.
     * In the left side menu, click `Service Credentials`. Click `New Credential`.
     * Check the checkbox for `Include HMAC Credential`. Click `Add`.
 
@@ -91,10 +91,10 @@ To deploy the functions required in this application, we'll use the `ibm fn depl
     export BUCKET_NAME=<your_bucket_name>
     ```
 
-1. You will need to save the endpoint name, which is the COS Endpoint for your buckets. Since you selected us-geo when selecting your buckets, the endpoint should be `s3.us.cloud-object-storage.appdomain.cloud`. 
+1. You will need to save the endpoint name, which is the COS Endpoint for your buckets. Since you selected us-south when selecting your buckets, the endpoint should be `s3.us-south.cloud-object-storage.appdomain.cloud`. 
 
     ```
-    export ENDPOINT=s3.us.cloud-object-storage.appdomain.cloud
+    export ENDPOINT=s3.us-south.cloud-object-storage.appdomain.cloud
     ```
 
 *Note: If you selected a different region, you can find your endpoint by clicking your Cloud Object Storage service in the [Resource list](https://cloud.ibm.com/resources?groups=storage), finding your bucket in the list, and then looking under Configuration for that bucket. Use the public endpoint.*
@@ -112,7 +112,7 @@ To deploy the functions required in this application, we'll use the `ibm fn depl
     ```
 
 ### Bind Service Credentials to the Created Cloud Object Storage Package
-1. The deploy command created a package for you called `cloud-object-storage`. This package contains some useful cloud functions for interacting with cloud object storage. If you selected a different region for your bucket than Cross Region us-geo, let's update the `cloud-object-storage` package with this information.
+1. The deploy command created a package for you called `cloud-object-storage`. This package contains some useful cloud functions for interacting with cloud object storage. Lets update the package with your endpoint information.
     ```
     ibmcloud fn package update cloud-object-storage --param endpoint $ENDPOINT
     ```
