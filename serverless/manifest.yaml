@@ -36,10 +36,11 @@ project:
           # Trigger
           # Creating trigger to fire events when data is inserted into COS
           $TRIGGER_NAME:
-              feed: myCosPkg/changes
+              feed: /whisk.system/cos/changes
               inputs:
                   bucket: $BUCKET_NAME
                   endpoint: $ENDPOINT
+                  event_types: write
       actions:
           parse_trigger:
             function: parse_trigger.js

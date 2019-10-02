@@ -18,7 +18,7 @@ To run this application, you'll need to set up IBM Object Storage and the IBM Vi
     * Give your service a name, and click `Create`.
     * In the left side menu, select `Buckets`, and then `Create bucket`.
     * Give your bucket a unique name. 
-    * For Resiliency, select `Regional`, and for Location, select `us-south`. *Note: This trigger is currently available in us-south, us-east, and eu-gb regions. You could select one of the other regions, but our examples will use us-south*
+    * For Resiliency, select `Regional`, and for Location, select `us-south`. *Note: This trigger is currently available in us-south, us-east, and eu-gb regions. You could select one of the other available regions, but our examples will use us-south*
     * Click `Create Bucket`.
     * Create another bucket, with the same name suffixed by `-processed`. If your original bucket was `my-bucket`, then your new bucket will be `my-bucket-processed`.
     * Again, ensure that you selected the same region as your first bucket, in this case `Regional` and `us-south`.
@@ -44,24 +44,6 @@ To run this application, you'll need to set up IBM Object Storage and the IBM Vi
 1. Set your namespace using the ID found in the previous step:
     ```
     ibmcloud fn property set --namespace <namespace_id>
-    ```
-
-### Create the Cloud Object Storage Experimental Package Binding
-IBM Cloud Functions has recently created an experimental package that introduces a feed action used during trigger creation to configure bucket-specific events. We will create a package binding to make the `whisk.system/cos-experimental` package avaliable in our namespace. This will enable us to set our own parameters on the package, such as required credentials.
-
-1. Create the package binding:
-    ```
-    ibmcloud fn package bind /whisk.system/cos-experimental myCosPkg
-    ```
-
-1. The service bind command requires your CloudFoundry API endpoint to be set. Let's set that now:
-    ```
-    ibmcloud target --cf
-    ```
-
-1. Bind your Cloud Object Storage credentials to your package binding. Make sure to include the name you chose for your Cloud Object Storage instance.
-    ```
-    ibmcloud fn service bind cloud-object-storage myCosPkg --instance YOUR_COS_INSTANCE_NAME
     ```
 
 ### Create Required IAM Policy for Cloud Functions to Access Cloud Object Storage
