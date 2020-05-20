@@ -1,2 +1,5 @@
-language: generic
-script: false
+language: bash
+sudo: required
+
+script:
+  - ./travis/verify-links.sh
